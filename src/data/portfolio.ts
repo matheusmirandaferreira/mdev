@@ -99,14 +99,14 @@ export const projects: Project[] = [
 export const experiences: Experience[] = [
   {
     role: 'Desenvolvedor Frontend Sênior',
-    company: '[EMPRESA_ATUAL]',
-    period: '2022 — Presente',
+    company: 'Essência Digital',
+    period: '2023 — Presente',
     description: 'Liderança técnica de projetos frontend, definição de arquitetura, code reviews e mentoria de devs juniors.',
   },
   {
     role: 'Desenvolvedor Frontend Pleno',
-    company: '[EMPRESA_ANTERIOR]',
-    period: '2020 — 2022',
-    description: 'Desenvolvimento de SPAs complexas, integração com APIs REST, implementação de design systems.',
+    company: 'Essência Digital',
+    period: '2021 — 2023',
+    description: 'Desenvolvimento de software com foco em interfaces modernas, integração com APIs REST e implementação de design systems.',
   },
 ]
