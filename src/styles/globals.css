@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-display: "Syne", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+
+  /* Neon blue palette */
+  --color-background: #050810;
+  --color-card: #080f1e;
+  --color-border: #0d1a30;
+  --color-border-hover: #1a3a6a;
+  --color-primary: #0066ff;
+  --color-primary-foreground: #ffffff;
+  --color-neon-blue: #0066ff;
+  --color-neon-cyan: #00d4ff;
+  --color-neon-green: #4ade80;
+  --color-foreground: #e0e8ff;
+  --color-muted: #1a2a4a;
+  --color-muted-foreground: #6a8aaa;
+  --color-accent: #00d4ff;
+  --color-accent-foreground: #050810;
+  --color-whatsapp: #25D366;
+
+  /* Shadcn-compatible CSS variable names (using HSL for Shadcn) */
+  --color-shadcn-background: hsl(220 57% 4%);
+  --color-shadcn-foreground: hsl(220 60% 93%);
+  --color-shadcn-card: hsl(220 50% 7%);
+  --color-shadcn-primary: hsl(220 100% 50%);
+  --color-shadcn-muted: hsl(220 40% 15%);
+  --color-shadcn-muted-foreground: hsl(210 30% 55%);
+  --color-shadcn-border: hsl(220 50% 12%);
+
+  /* Border radius */
+  --radius: 4px;
+  --radius-lg: 4px;
+  --radius-md: 2px;
+  --radius-sm: 2px;
+
+  /* Animations */
+  --animate-pulse-slow: pulse-slow 2s ease-in-out infinite;
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+}
+
+/* Shadcn/UI CSS variables — these are what Shadcn components actually use */
+@layer base {
+  :root {
+    --background: 220 57% 4%;
+    --foreground: 220 60% 93%;
+    --card: 220 50% 7%;
+    --card-foreground: 220 60% 93%;
+    --popover: 220 50% 7%;
+    --popover-foreground: 220 60% 93%;
+    --primary: 220 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 40% 12%;
+    --secondary-foreground: 220 60% 93%;
+    --muted: 220 40% 15%;
+    --muted-foreground: 210 30% 55%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 220 57% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 50% 12%;
+    --input: 220 50% 12%;
+    --ring: 220 100% 50%;
+    --radius: 4px;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .section-number {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--color-neon-blue);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .gradient-text {
+    background: linear-gradient(to right, var(--color-neon-blue), var(--color-neon-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .accent-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--color-neon-blue), var(--color-neon-cyan));
+  }
+}
