@@ -41,13 +41,14 @@ const FormField = <
 const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext)
   const itemContext = React.useContext(FormItemContext)
+
+  if (!fieldContext.name) {
+    throw new Error("useFormField should be used within <FormField>")
+  }
+
   const { getFieldState } = useFormContext()
   const formState = useFormState({ name: fieldContext.name })
   const fieldState = getFieldState(fieldContext.name, formState)
-
-  if (!fieldContext) {
-    throw new Error("useFormField should be used within <FormField>")
-  }
 
   const { id } = itemContext
 
@@ -100,27 +101,25 @@ function FormLabel({
   )
 }
 
-function FormControl({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+const FormControl = React.forwardRef<
+  HTMLElement,
+  React.HTMLAttributes<HTMLElement>
+>(({ ...props }, _ref) => {
   const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
 
-  return (
-    <div
-      data-slot="form-control"
-      id={formItemId}
-      aria-describedby={
-        !error
-          ? `${formDescriptionId}`
-          : `${formDescriptionId} ${formMessageId}`
-      }
-      aria-invalid={!!error}
-      className={cn("contents", className)}
-      {...props}
-    />
+  const child = React.Children.only(
+    props.children as React.ReactElement<React.HTMLAttributes<HTMLElement>>
   )
-}
+
+  return React.cloneElement(child, {
+    id: formItemId,
+    'aria-describedby': !error
+      ? formDescriptionId
+      : `${formDescriptionId} ${formMessageId}`,
+    'aria-invalid': !!error,
+  })
+})
+FormControl.displayName = 'FormControl'
 
 function FormDescription({ className, ...props }: React.ComponentProps<"p">) {
   const { formDescriptionId } = useFormField()
