@@ -47,10 +47,10 @@ export const developer: Developer = {
     'Se você precisa de um site que vende, de um app que as pessoas adoram usar, ou de um sistema complexo que funciona sem travar — é comigo.',
   ],
   location: 'São Paulo, Brasil',
-  email: '[SEU_EMAIL]',
-  github: 'https://github.com/[SEU_USER]',
-  linkedin: 'https://linkedin.com/in/[SEU_USER]',
-  whatsapp: '55[SEU_NUMERO]',
+  email: 'mdevsolucoesti@gmail.com',
+  github: 'https://github.com/matheusmirandaferreira',
+  linkedin: 'https://www.linkedin.com/in/matheus-de-miranda-ferreira-9820221b5/',
+  whatsapp: '5511941992981',
   initials: 'MMF',
 }
 
