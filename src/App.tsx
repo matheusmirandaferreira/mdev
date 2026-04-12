@@ -1,12 +1,27 @@
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
+import { ScrollToTop } from '@/components/ui/ScrollToTop'
+import { Hero } from '@/components/sections/Hero'
+import { About } from '@/components/sections/About'
+import { Skills } from '@/components/sections/Skills'
+import { Projects } from '@/components/sections/Projects'
+import { Experience } from '@/components/sections/Experience'
+import { Contact } from '@/components/sections/Contact'
+
 export default function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground p-8">
-      <h1 className="font-display text-4xl font-bold text-neon-blue">
-        Matheus de Miranda Ferreira
-      </h1>
-      <p className="font-body text-muted-foreground mt-2">
-        Desenvolvedor Frontend Sênior
-      </p>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
+      </main>
+      <Footer />
+      <ScrollToTop />
     </div>
   )
 }
