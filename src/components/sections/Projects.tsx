@@ -14,7 +14,7 @@ export function Projects() {
       <div ref={ref}>
         <p className="section-number">03 / PROJETOS</p>
         <h2 className="mb-10 font-display text-3xl font-extrabold tracking-tight text-foreground">
-          O que já construí
+          Alguns exemplos
         </h2>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -28,9 +28,12 @@ export function Projects() {
             >
               <div className="accent-line" />
 
-              {/* Preview placeholder */}
-              <div className="mb-5 flex h-28 items-center justify-center border border-border bg-background">
-                <span className="text-[10px] tracking-[2px] text-muted-foreground">PREVIEW</span>
+              <div className="mb-5 overflow-hidden border border-border bg-background">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-44 w-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                />
               </div>
 
               <h3 className="mb-2 font-display text-base font-bold text-foreground">

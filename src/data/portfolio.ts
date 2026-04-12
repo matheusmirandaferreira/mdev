@@ -23,6 +23,7 @@ export interface Project {
   title: string
   description: string
   stack: string[]
+  image: string
   demoUrl: string
   repoUrl: string
 }
@@ -70,6 +71,7 @@ export const projects: Project[] = [
     title: 'Dashboard de Monitoramento Real-Time',
     description: 'Dashboard com atualização em tempo real via WebSocket, gráficos interativos e filtros avançados.',
     stack: ['React', 'TypeScript', 'TanStack Query', 'WebSocket', 'Tailwind CSS', 'Recharts'],
+    image: '/dash_screen.png',
     demoUrl: '#',
     repoUrl: '#',
   },
@@ -77,6 +79,7 @@ export const projects: Project[] = [
     title: 'App Mobile de Gestão de Tarefas',
     description: 'Aplicativo mobile multiplataforma com sync offline, notificações push e UI fluida.',
     stack: ['React Native', 'TypeScript', 'React Hook Form', 'Zod'],
+    image: '/app_todo_screen.png',
     demoUrl: '#',
     repoUrl: '#',
   },
@@ -84,13 +87,7 @@ export const projects: Project[] = [
     title: 'E-commerce SPA',
     description: 'Loja virtual SPA com carrinho persistente, busca com debounce, paginação infinita e checkout multi-step.',
     stack: ['React', 'TypeScript', 'Styled Components', 'TanStack Query', 'Vite'],
-    demoUrl: '#',
-    repoUrl: '#',
-  },
-  {
-    title: 'Sistema de Chat Colaborativo',
-    description: 'Chat em tempo real com rooms, typing indicators, envio de arquivos e histórico persistente.',
-    stack: ['React', 'Socket.io', 'TypeScript', 'Tailwind CSS', 'Zod'],
+    image: '/ecommerce_screen.png',
     demoUrl: '#',
     repoUrl: '#',
   },

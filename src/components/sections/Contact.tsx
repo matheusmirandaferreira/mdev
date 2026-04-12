@@ -25,18 +25,32 @@ export function Contact() {
   const inView = useInView(ref)
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: { name: '', email: '', message: '' },
   })
 
-  function onSubmit(_formData: ContactFormData) {
+  async function onSubmit(formData: ContactFormData) {
     setLoading(true)
-    setTimeout(() => {
+    setError(false)
+    try {
+      const res = await fetch('https://formspree.io/f/xykbrrpo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        setError(true)
+      }
+    } catch {
+      setError(true)
+    } finally {
       setLoading(false)
-      setSubmitted(true)
-    }, 1500)
+    }
   }
 
   return (
@@ -163,6 +177,12 @@ export function Contact() {
                       </FormItem>
                     )}
                   />
+
+                  {error && (
+                    <p className="text-xs text-red-400">
+                      Erro ao enviar. Tente novamente ou use o WhatsApp.
+                    </p>
+                  )}
 
                   <Button
                     type="submit"

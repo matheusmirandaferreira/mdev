@@ -27,11 +27,11 @@ export function About() {
           >
             <div className="relative">
               <div className="absolute -inset-2 rounded-full border border-neon-blue opacity-20" />
-              <div className="flex h-44 w-44 items-center justify-center rounded-full border-2 border-border bg-card">
-                <span className="font-display text-6xl font-extrabold text-neon-cyan">
-                  {developer.initials}
-                </span>
-              </div>
+              <img
+                src="/profile.jpeg"
+                alt={developer.name}
+                className="h-44 w-44 rounded-full border-2 border-border object-cover object-top"
+              />
             </div>
             <div className="flex items-center gap-1 text-[10px] tracking-widest text-muted-foreground">
               <MapPin size={10} />

@@ -90,11 +90,11 @@ export function Hero() {
         >
           <div className="relative">
             <div className="absolute -inset-1.5 rounded-full border border-neon-blue opacity-30" />
-            <div className="flex h-36 w-36 items-center justify-center rounded-full border-2 border-border bg-card">
-              <span className="font-display text-5xl font-extrabold text-neon-cyan">
-                {developer.initials}
-              </span>
-            </div>
+            <img
+              src="/profile.jpeg"
+              alt={developer.name}
+              className="h-36 w-36 rounded-full border-2 border-border object-cover object-top"
+            />
           </div>
 
           <div className="flex items-center gap-1 text-[10px] tracking-widest text-muted-foreground">
