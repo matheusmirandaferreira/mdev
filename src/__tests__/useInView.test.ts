@@ -9,7 +9,7 @@ describe('useInView', () => {
 
   beforeEach(() => {
     vi.resetAllMocks()
-    global.IntersectionObserver = vi.fn().mockImplementation(function (cb: IntersectionObserverCallback) {
+    ;(globalThis as typeof globalThis & { IntersectionObserver: typeof IntersectionObserver }).IntersectionObserver = vi.fn().mockImplementation(function (cb: IntersectionObserverCallback) {
       observerCallback = cb
       return { observe: observeMock, disconnect: disconnectMock }
     }) as unknown as typeof IntersectionObserver
