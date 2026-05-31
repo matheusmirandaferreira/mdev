@@ -52,6 +52,15 @@ export function About() {
               </p>
             ))}
             <div className="mt-2 h-px w-12 bg-neon-blue" />
+            <a
+              href={`https://wa.me/${developer.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 flex w-fit items-center gap-2 px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
+              style={{ backgroundColor: '#25D366' }}
+            >
+              <span>💬</span> Entre em contato
+            </a>
           </motion.div>
         </div>
       </div>
