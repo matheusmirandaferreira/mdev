@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 import { developer } from '@/data/portfolio'
+import logoMark from '@/assets/logo-mark.png'
 
 const NAV_ITEMS = [
   { label: 'Sobre', href: '#sobre' },
@@ -48,10 +49,16 @@ export function Header() {
       style={scrolled ? { backgroundColor: 'rgba(5, 8, 16, 0.9)' } : undefined}
     >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4 md:px-12 lg:px-24">
-        <a href="#" className="text-neon-cyan font-display text-base font-bold tracking-tight">
-          {developer.firstName.toLowerCase()}
-          <span className="text-neon-blue">.</span>
-          dev
+        <a
+          href="#"
+          className="text-neon-cyan font-display flex items-center gap-2 text-base font-bold tracking-tight"
+        >
+          <img src={logoMark} alt="" aria-hidden="true" width={38} height={32} className="h-8 w-auto" />
+          <span>
+            {developer.firstName.toLowerCase()}
+            <span className="text-neon-blue">.</span>
+            dev
+          </span>
         </a>
 
         <nav className="hidden items-center gap-6 md:flex">
