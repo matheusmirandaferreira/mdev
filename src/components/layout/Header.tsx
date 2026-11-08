@@ -43,12 +43,12 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 px-6 transition-all duration-300 md:px-12 lg:px-24',
         scrolled ? 'border-b border-border backdrop-blur-sm' : 'bg-transparent',
       )}
       style={scrolled ? { backgroundColor: 'rgba(5, 8, 16, 0.9)' } : undefined}
     >
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4 md:px-12 lg:px-24">
+      <div className="mx-auto flex max-w-5xl items-center justify-between py-4">
         <a
           href="#"
           className="text-neon-cyan font-display flex items-center gap-2 text-base font-bold tracking-tight"
