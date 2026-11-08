@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { MapPin } from 'lucide-react'
+import { MapPin, MessageCircle } from 'lucide-react'
 import { developer } from '@/data/portfolio'
 import { GithubIcon, LinkedinIcon } from '@/components/icons'
 
@@ -69,7 +69,7 @@ export function Hero() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-neon-blue px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
             >
-              <span>💬</span>
+              <MessageCircle size={16} aria-hidden="true" />
               Falar no WhatsApp
             </a>
             <a

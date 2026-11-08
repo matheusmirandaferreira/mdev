@@ -2,7 +2,7 @@ import { useState, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { motion } from 'framer-motion'
-import { CheckCircle } from 'lucide-react'
+import { CheckCircle, MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -80,7 +80,7 @@ export function Contact() {
               className="flex items-center justify-center gap-2 py-4 text-sm font-bold text-white transition-opacity hover:opacity-90"
               style={{ backgroundColor: '#25D366' }}
             >
-              <span>💬</span> Falar no WhatsApp
+              <MessageCircle size={16} aria-hidden="true" /> Falar no WhatsApp
             </a>
 
             <div className="flex flex-col gap-3">
@@ -187,7 +187,7 @@ export function Contact() {
                   <Button
                     type="submit"
                     disabled={loading}
-                    className="bg-neon-blue text-white hover:opacity-90 disabled:opacity-50"
+                    className="h-auto rounded-none border-0 bg-neon-blue py-4 text-sm font-bold text-white hover:opacity-90 disabled:opacity-50"
                   >
                     {loading ? 'Enviando...' : 'Enviar mensagem'}
                   </Button>

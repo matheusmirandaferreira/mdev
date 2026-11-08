@@ -8,10 +8,9 @@ const NAV_ITEMS = [
   { label: 'Skills', href: '#skills' },
   { label: 'Projetos', href: '#projetos' },
   { label: 'Experiência', href: '#experiencia' },
-  { label: 'Contato', href: '#contato' },
 ] as const
 
-const SECTION_IDS = ['sobre', 'skills', 'projetos', 'experiencia', 'contato'] as const
+const SECTION_IDS = ['sobre', 'skills', 'projetos', 'experiencia'] as const
 
 export function Header() {
   const [activeSection, setActiveSection] = useState<string>('')

@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
-import { MapPin } from 'lucide-react'
+import { MapPin, MessageCircle } from 'lucide-react'
 import { SectionWrapper } from '@/components/layout/SectionWrapper'
 import { useInView } from '@/hooks/useInView'
 import { developer } from '@/data/portfolio'
@@ -59,7 +59,7 @@ export function About() {
               className="mt-2 flex w-fit items-center gap-2 px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
               style={{ backgroundColor: '#25D366' }}
             >
-              <span>💬</span> Entre em contato
+              <MessageCircle size={16} aria-hidden="true" /> Entre em contato
             </a>
           </motion.div>
         </div>
